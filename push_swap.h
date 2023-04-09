@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:57:15 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/08 22:42:52 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/09 04:47:57 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@
 # include <unistd.h>
 # include <stdint.h>
 # include <limits.h>
+
+typedef struct s_gc
+{
+	void	*ptr;
+	struct s_gc *next;
+}	t_gc;
 
 typedef struct s_stack
 {

@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:56:13 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/09 02:12:03 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/09 06:10:43 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,13 @@ int	main(int ac, char **av)
 		f(&vars.a, &vars.b);
 		sort(&vars.a, &vars.b);
 	}
-	free(vars.k);
-	free_stack(&vars.a);
-	free_stack(&vars.b);
-	atexit(check_leaks);
-	return (0);
-}
+	// free(vars.k);
+	// free_stack(&vars.a);
+	// free_stack(&vars.b);
+	// atexit(check_leaks);
+
+	//TODO - sdlfs;fsd
+	
 	// t_stack	*tmp ;
 	// int i =0;
 	// tmp = vars.a;
@@ -51,9 +52,11 @@ int	main(int ac, char **av)
 	// while (tmp)
 	// {
 	// 	if (i <= (vars.a->size)/2)
-	// 		printf("a %d\t%d\t|| : max %d\n",i,tmp->x,tmp->max);
+	// 		printf("a \t%d\t|| : max %d\n",tmp->x,tmp->max);
 	// 	else
-	// 		printf("a %d\t%d\t||\n",i - vars.a->size,tmp->x);
+	// 		printf("a \t%d\t||\n",tmp->x);
 	// 	tmp = tmp->next;
 	// 	i++;
 	// }
+	return (0);
+}

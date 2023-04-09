@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 15:53:32 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/09 00:19:55 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/09 05:55:55 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,14 @@ void	pa(t_stack **a, t_stack **b)
 	if (!tmp)
 		return ;
 	ft_putstr_fd("pa\n", 1);
-	if (data == 0 && !((*b)->next) && ((*b)->size == 0))
-		return ;
-	push_el(a, tmp->x, (*a)->min, (*a)->max);
-	free(tmp);
+	if (!*a)
+		tmp->size = 1;
+	else
+		tmp->size = (*a)->size + 1;
+	ft_lstadd_front(a, tmp);
+	ft_lstiter(*a, tmp->size);
+	// push_el(a, tmp->x, (*a)->min, (*a)->max);
+	// free(tmp);
 }
 
 void	pb(t_stack **a, t_stack **b)
@@ -37,11 +41,18 @@ void	pb(t_stack **a, t_stack **b)
 	tmp = (pop_el(a));
 	if (!tmp)
 		return ;
-	if (data == 0 && !((*a)->next) && ((*b)->size) == 0)
-		return ;
-	push_el(b, tmp->x, (*a)->min, (*a)->max);
 	ft_putstr_fd("pb\n", 1);
-	free(tmp);
+	if (!(*b)){
+		tmp->size = 1;
+	}
+	else
+		tmp->size = (*a)->size + 1;
+	ft_lstadd_front(b, tmp);
+	ft_lstiter(*b, tmp->size);
+	// if (data == 0 && !((*a)->next) && ((*b)->size) == 0)
+	// 	return ;
+	// push_el(b, tmp->x, (*a)->min, (*a)->max);
+	// free(tmp);
 }
 
 void	sa(t_stack	**a, int mode)
